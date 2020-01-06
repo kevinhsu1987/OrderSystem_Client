@@ -24,11 +24,6 @@ public class MainActivity extends AppCompatActivity {
         clientThread.start();
         pref = getSharedPreferences("menu", MODE_PRIVATE);
 
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
         data = clientThread.getData();
         String v = pref.getString("menu", null);
         if (v == null && data != null) {
@@ -38,15 +33,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void BtnHamburger(View v) {
-        Bundle bundle = new Bundle();
-        bundle.putString("type", "美式漢堡");
-        bundle.putInt("layout", R.layout.base_list_layout);
-        Intent intent = new Intent(MainActivity.this, ListActivity.class);
-        intent.putExtras(bundle);
-        startActivity(intent);
+    @Override
+    protected void onStart() {
+        super.onStart();
+
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        String s = data.getExtras().getString("result","empty");
+        System.out.println(s);
+    }
     public void onClick(View v) {
         String type = null;
         int layout = R.layout.base_list_layout;
@@ -72,6 +69,6 @@ public class MainActivity extends AppCompatActivity {
         bundle.putString("type",type);
         intent.putExtras(bundle);
         intent.setClass(MainActivity.this, ListActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, 0);
     }
 }

@@ -56,7 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.innerViewHolder> {
                 @Override
                 public void onClick(View view) {
                 int pos = viewHolder.getAdapterPosition();
-                    onItemClickListener.onItemClick(viewHolder.tName, pos);
+                    onItemClickListener.onItemClick(viewHolder.editText, pos);
                 }
             });
         }
