@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">OrderSystem_Client</string>
+    <string name="btn_confirm">確認</string>
+    <string name="btn_back">返回</string>
 </resources>

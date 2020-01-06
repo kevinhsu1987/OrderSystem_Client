@@ -7,144 +7,164 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/hamburger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="128dp"
-        android:text="美式漢堡"
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/Bagel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="128dp"
-        android:text="紐約貝果"
-        app:layout_constraintStart_toEndOf="@+id/hamburger"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
-    <Button
-        android:id="@+id/kungfu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="128dp"
-        android:text="手做功夫堡"
-        app:layout_constraintStart_toEndOf="@+id/Bagel"
-        app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/hamburger"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="美式漢堡" />
 
-    <Button
-        android:id="@+id/Panini"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="72dp"
-        android:text="帕尼尼"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hamburger" />
+            <Button
+                android:id="@+id/Bagel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="紐約貝果" />
 
-    <Button
-        android:id="@+id/Croissant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
-        android:text="英式可頌"
-        app:layout_constraintStart_toEndOf="@+id/Panini"
-        app:layout_constraintTop_toBottomOf="@+id/Bagel" />
+            <Button
+                android:id="@+id/kungfu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="手做功夫堡" />
+        </TableRow>
 
-    <Button
-        android:id="@+id/sandwich"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
-        android:text="古巴三明治"
-        app:layout_constraintStart_toEndOf="@+id/Croissant"
-        app:layout_constraintTop_toBottomOf="@+id/kungfu" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-    <Button
-        android:id="@+id/submarine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="72dp"
-        android:text="潛艇堡"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Panini" />
+            <Button
+                android:id="@+id/Panini"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="帕尼尼" />
 
-    <Button
-        android:id="@+id/riceburger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
-        android:text="米漢堡"
-        app:layout_constraintStart_toEndOf="@+id/submarine"
-        app:layout_constraintTop_toBottomOf="@+id/Croissant" />
+            <Button
+                android:id="@+id/Croissant"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="英式可頌" />
 
-    <Button
-        android:id="@+id/burrito"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="72dp"
-        android:text="捲餅"
-        app:layout_constraintStart_toEndOf="@+id/riceburger"
-        app:layout_constraintTop_toBottomOf="@+id/sandwich" />
+            <Button
+                android:id="@+id/sandwich"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="古巴三明治" />
+        </TableRow>
 
-    <Button
-        android:id="@+id/toast"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="72dp"
-        android:text="吐司"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submarine" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
-    <Button
-        android:id="@+id/lightmeal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
-        android:text="輕食"
-        app:layout_constraintStart_toEndOf="@+id/toast"
-        app:layout_constraintTop_toBottomOf="@+id/riceburger" />
+            <Button
+                android:id="@+id/submarine"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="潛艇堡" />
 
-    <Button
-        android:id="@+id/eggwrap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="72dp"
-        android:text="全麥蛋餅"
-        app:layout_constraintStart_toEndOf="@+id/lightmeal"
-        app:layout_constraintTop_toBottomOf="@+id/burrito" />
+            <Button
+                android:id="@+id/riceburger"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="米漢堡" />
 
-    <Button
-        android:id="@+id/drink"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="72dp"
-        android:text="飲料"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toast" />
+            <Button
+                android:id="@+id/burrito"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="捲餅" />
+        </TableRow>
 
-    <Button
-        android:id="@+id/coffee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="72dp"
-        android:text="研磨咖啡"
-        app:layout_constraintStart_toEndOf="@+id/drink"
-        app:layout_constraintTop_toBottomOf="@+id/lightmeal" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/toast"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="吐司" />
+
+            <Button
+                android:id="@+id/lightmeal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="輕食" />
+
+            <Button
+                android:id="@+id/eggwrap"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="全麥蛋餅" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/drink"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="飲料" />
+
+            <Button
+                android:id="@+id/coffee"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:text="研磨咖啡" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="結帳" />
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
