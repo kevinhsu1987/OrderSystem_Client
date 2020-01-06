@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String menu(){
-        ClientThreadCode menu = new ClientThreadCode("192.168.0.12", 8000);
+        ClientThreadCode menu = new ClientThreadCode("192.168.1.183", 8000);
         String menu1 = menu.data;
         return menu1;
     }
