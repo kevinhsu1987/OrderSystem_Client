@@ -12,20 +12,24 @@ import java.util.ArrayList;
 
 
 public class ListActivity extends BaseListActivity {
+    ArrayList<String> names;
+    ArrayList<String> nums;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = getIntent().getExtras();
         type = bundle.getString("type");
+        names = bundle.getStringArrayList("names");
+        nums = bundle.getStringArrayList("nums");
         int layout = bundle.getInt("layout");
         setContentView(layout);
         rview = findViewById(R.id.recycleview);
         lNames = new ArrayList<>();
         lCosts = new ArrayList<>();
+        lNums = new ArrayList<>();
         String order1 = getSharedPreferences("menu", 0).getString("menu", null);
         if (order1 != null) {
             String[] menulists = order1.split("/");
-            ArrayList<String> name = new ArrayList<>();
             for (String menulist : menulists) {
                 String[] temp = menulist.split(",");
                 if (temp[0].equals(type)) {
@@ -33,10 +37,30 @@ public class ListActivity extends BaseListActivity {
                     lCosts.add(temp[2]);
                 }
             }
+
         }
-        adapter = new MyListAdapter(this, lNames, lCosts);
+        if(names !=null) {
+            for (int i=0;i<lNames.size();i++)
+                if (names.indexOf(lNames.get(i)) >= 0)
+                    lNums.add(nums.get(names.indexOf(lNames.get(i))));
+                else
+                    lNums.add("");
+        }
+
+
+        adapter = new MyListAdapter(this, lNames, lCosts, lNums);
         rview.setLayoutManager(new LinearLayoutManager(this));
         rview.setAdapter(adapter);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        for(String n:names){
+//            int index = lNames.indexOf(n);
+//            adapter.setNumsByPosition(Integer.parseInt(nums.get(names.indexOf(n))),index);
+//        }
     }
 
     @Override

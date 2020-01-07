@@ -15,22 +15,20 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.innerViewH
     private Context mContext;
     private ArrayList<String> mNames;
     private ArrayList<String> mCosts;
+    private ArrayList<String> mNums;
 
     private OnItemClickListener onItemClickListener;
 
-    public MyListAdapter(Context context, ArrayList<String> mNames, ArrayList<String> mCosts) {
+    public MyListAdapter(Context context, ArrayList<String> mNames, ArrayList<String> mCosts, ArrayList<String> mNums) {
         this.mContext = context;
         this.mNames = mNames;
         this.mCosts = mCosts;
+        this.mNums = mNums;
     }
 
-    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
-        this.onItemClickListener = onItemClickListener;
-    }
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {this.onItemClickListener = onItemClickListener;}
 
-    public interface OnItemClickListener{
-        void onItemClick(View view, int position);
-    }
+    public interface OnItemClickListener{void onItemClick(View view, int position);}
 
     @Override
     public innerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -48,8 +46,15 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.innerViewH
     public void onBindViewHolder(@NonNull final innerViewHolder viewHolder, final int i) {
         String name = mNames.get(i);
         String cost = mCosts.get(i);
+        String nums;
+        if(!mNums.isEmpty()) {
+            nums = mNums.get(i);
+            viewHolder.editText.setText(nums);
+        }
         viewHolder.tName.setText(name);
         viewHolder.tCost.setText(cost);
+
+        //mNums.add(viewHolder.editText);
         if(onItemClickListener!=null){
 
             viewHolder.tName.setOnClickListener(new View.OnClickListener(){
@@ -77,8 +82,8 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.innerViewH
         }
     }
 
-    public String getNamesByPosition(int position){
-        return mNames.get(position);
+    public String getNamesByPosition(int pos){
+        return mNames.get(pos);
     }
 }
 

@@ -62,7 +62,7 @@ public class ResultActivity extends BaseListActivity {
         }
         stringBuilder.append(result);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("確認").setMessage("是否確認送出？");
+        builder.setTitle("確認").setMessage("是否確認送出？目前總金額："+result);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
